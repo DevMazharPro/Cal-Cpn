@@ -14,21 +14,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
 const siteUrl = "https://cal-cpn.vercel.app/";
 
 export const metadata: Metadata = {
- 
   metadataBase: new URL(siteUrl),
 
   title: {
-    template: "%s", 
-    default: "Cal-Cpn: Accurate CPN Calculator for University Admissions", 
+    template: "%s | Cal-Cpn", // Updated template
+    default: "Cal-Cpn: Accurate CPN Calculator for University Admissions",
   },
-
   description:
     "Free and accurate CPN (Composite Percentage Number) calculator for students. Instantly calculate your aggregate score for university admissions in Pakistan.",
-
   keywords: [
     "CPN calculator",
     "aggregate calculator",
@@ -39,13 +35,16 @@ export const metadata: Metadata = {
     "Pakistan university",
     "aggregate score",
   ],
-
-  // For search engine crawlers
   robots: {
     index: true,
     follow: true,
   },
 
+  // --- This is the new, recommended way ---
+  verification: {
+    google: "mNHWdwpN4-dBPTHIxNJt4e_rNFJcFULA2MTn4_YEh_M",
+  },
+  // ------------------------------------------
 
   openGraph: {
     title: "Cal-Cpn: Accurate CPN Calculator",
@@ -53,10 +52,9 @@ export const metadata: Metadata = {
       "Instantly calculate your CPN (Composite Percentage Number) for university admissions.",
     url: siteUrl,
     siteName: "Cal-Cpn",
-  
     images: [
       {
-        url: "/og-image.png", // Path relative to /public
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Cal-Cpn CPN Calculator",
@@ -65,41 +63,29 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-
-  // Twitter Card
   twitter: {
     card: "summary_large_image",
     title: "Cal-Cpn: Accurate CPN Calculator",
     description:
       "Instantly calculate your CPN (Composite Percentage Number) for university admissions.",
-    // !! IMPORTANT: Use the same /og-image.png
     images: ["/og-image.png"],
-    // Optional: Add your Twitter handle
-    // creator: "@yourTwitterHandle",
   },
 };
 
 // --- Layout Component ---
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
+    // Removed the manual <head> tag
     <html lang="en">
-      <head>
-        <meta
-          name="google-site-verification"
-          content="mNHWdwpN4-dBPTHIxNJt4e_rNFJcFULA2MTn4_YEh_M"
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
         <Navbar />
         {children}
-
         <Footer />
       </body>
     </html>

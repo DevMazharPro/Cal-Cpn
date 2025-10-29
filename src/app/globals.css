@@ -5,22 +5,15 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Other global styles... */
+
+/* Force transparency for the Next.js Image wrapper */
+.cpn-illustration-no-bg {
+  /* This targets the div or span that next/image wraps the <img> with */
+  background-color: transparent !important; 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* If the above doesn't work, try targeting the img directly */
+.cpn-illustration-no-bg > img {
+  background-color: transparent !important;
 }

@@ -1,0 +1,5 @@
+here in this we learned 
+1 project create (npx create-next-app@latest)
+2 project runing and hello world (npm run dev to local host and by editing page.tsx)
+3 project structure (how it organized app, public for images)
+4 routing (nested routing and file based routing)

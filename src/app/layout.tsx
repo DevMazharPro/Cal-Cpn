@@ -15,23 +15,20 @@ const geistMono = Geist_Mono({
 });
 
 
-const siteUrl = "https://www.your-cal-cpn-website.com";
+const siteUrl = "https://cal-cpn.vercel.app/";
 
 export const metadata: Metadata = {
  
   metadataBase: new URL(siteUrl),
 
-  // Title template for all pages
   title: {
-    template: "%s", // Child pages will fill in '%s'
-    default: "Cal-Cpn: Accurate CPN Calculator for University Admissions", // Default for homepage
+    template: "%s", 
+    default: "Cal-Cpn: Accurate CPN Calculator for University Admissions", 
   },
 
-  // SEO-friendly description
   description:
     "Free and accurate CPN (Composite Percentage Number) calculator for students. Instantly calculate your aggregate score for university admissions in Pakistan.",
 
-  // Keywords for search engines
   keywords: [
     "CPN calculator",
     "aggregate calculator",
@@ -56,7 +53,7 @@ export const metadata: Metadata = {
       "Instantly calculate your CPN (Composite Percentage Number) for university admissions.",
     url: siteUrl,
     siteName: "Cal-Cpn",
-    // !! IMPORTANT: Create an image (e.g., 1200x630px) and place it in your /public folder
+  
     images: [
       {
         url: "/og-image.png", // Path relative to /public
